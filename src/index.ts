@@ -6,7 +6,6 @@ import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import { specs } from "./swaggerConfig";
 import mongoose from "mongoose";
-import HelloRouter from "./routes/helloRoutes";
 import AuthRouter from "./routes/authRoutes";
 import productsRouter from "./routes/productsRoutes";
 const app = express();
@@ -15,7 +14,6 @@ app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 app.use("/api/auth/", AuthRouter);
 app.use("/api/products/", productsRouter);
-app.use("/hello", HelloRouter);
 
 const port = process.env.PORT || 5000;
 const MONGODB_URI = process.env.DATABASE_URL;
