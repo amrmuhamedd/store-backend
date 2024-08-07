@@ -14,5 +14,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
+  "files": ["./src/express.d.ts"],
   "include": ["src/**/*.ts"]
 }
