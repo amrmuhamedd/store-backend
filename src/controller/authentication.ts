@@ -25,7 +25,12 @@ export const Register = async (req: Request, res: Response) => {
     });
     await newUser.save();
 
-    const token = await generateAuthToken(newUser.toObject());
+    const token = await generateAuthToken({
+      _id: newUser._id,
+      name: newUser.name,
+      email: newUser.email,
+      role: newUser.role,
+    });
 
     res.status(201).json({ token });
   } catch (error) {
